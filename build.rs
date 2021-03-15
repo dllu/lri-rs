@@ -1,6 +1,6 @@
 use std::fs;
 
-use protoc_rust::Customize;
+use protobuf_codegen_pure::Customize;
 use std::path::Path;
 
 fn main() {
@@ -11,7 +11,7 @@ fn main() {
     }
     fs::create_dir(&proto_dir).unwrap();
 
-    protoc_rust::Codegen::new()
+    protobuf_codegen_pure::Codegen::new()
         .customize(Customize {
             gen_mod_rs: Some(true),
             ..Default::default()
